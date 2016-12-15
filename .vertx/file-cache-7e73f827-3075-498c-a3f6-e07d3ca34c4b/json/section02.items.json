@@ -1,0 +1,22 @@
+    [{
+        "img":    "img/main_section02_01.jpg",
+        "title":  " 소고기 특집!",
+        "desc":   "\"완전 살살녹아\"",
+        "editorPic":"img/editor01.jpg",
+        "editorName":"가인"
+    },
+    {
+        "img":    "img/main_section02_02.jpg",
+        "title":  "통닭 구이 스페셜 ",
+        "desc":   "\"훈제향이 가득\"",
+        "editorPic":"img/editor02.jpg",
+        "editorName":"다원"
+    },
+    {
+        "img":    "img/main_section02_03.jpg",
+        "title":  "해산물 모음 ",
+        "desc":   "\"새우가 제일 맛나~\"",
+        "editorPic":"img/editor03.jpg",
+        "editorName":"수지"
+    }]
+
