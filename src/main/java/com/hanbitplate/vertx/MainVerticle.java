@@ -16,13 +16,31 @@ public class MainVerticle extends AbstractVerticle {
 	
 	public static void main(String[] args) {
 		Vertx vertx = Vertx.vertx();
-		vertx.deployVerticle(new MainVerticle());
 		
+		vertx.createHttpClient().getAbs("http://localhost:8080/shutdown",
+				response->{
+					
+				})
+				.connectionHandler(connection -> {
+					connection.exceptionHandler(exception -> {
+						System.err.println("server stopped");
+					});
+				})
+				.exceptionHandler(exception->{
+					vertx.deployVerticle(new MainVerticle());
+					System.out.println("server start");
+				}).end();;
 		
+
 	}
 	
 	public void start() throws Exception{
 		Router router = Router.router(vertx);
+		
+		
+		router.route("/shutdown").handler(ctx->{
+			System.exit(0);
+		});
 		
 		router.route("/api/main/section/:sectionCode/items").handler(ctx->{
 			HttpServerRequest request =ctx.request();
@@ -51,6 +69,8 @@ public class MainVerticle extends AbstractVerticle {
 			response.putHeader("content-type","application/json;charset=UTF-8");
 			response.sendFile("json/common.hotplaces.json");
 		});
+				
+		new TopListRouter().defineRouters(router);
 		
 		vertx.createHttpServer().requestHandler(router::accept).listen(8080);
 		

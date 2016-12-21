@@ -1,0 +1,28 @@
+{
+    "id": "christmas",
+    "title": "크리스마스 메뉴 판매하는 맛집 베스트 10곳",
+    "desc": "\"드디어 기다리고 기다리던 날이 왔다\"",
+    "clicks": 5953,
+    "date": "2016-12-19",
+    "stores": [{
+         "name": "거구장",
+       "score": 3.5,
+       "img": "img/main_section03_01.jpg",
+       "location": "신촌",
+       "category": "한식",
+       "latLng": {
+          "lat": 37.5526233,
+           "lng": 126.9375131
+       }
+    }, {
+         "name": "미분당",
+       "score": 4.5,
+       "img": "img/main_section03_02.jpg",
+       "location": "신촌",
+       "category": "중식",
+       "latLng": {
+          "lat": 37.5567962,
+           "lng": 126.9313453
+       }
+    }]
+}
